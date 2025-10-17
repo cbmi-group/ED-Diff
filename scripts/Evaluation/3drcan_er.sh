@@ -1,0 +1,17 @@
+python batch_inference.py \
+--device 0 \
+--model_path "checkpoints/3drcan_model.pt" \
+--data_dir "datasets/3drcan_er/raw" \
+--gt_dir "datasets/3drcan_er/gt" \
+--save_dir "results/3drcan_er" \
+--ae_iters 15 \
+--ae_lr 0.01 \
+--sigma 5 \
+--omega 0.005 \
+--cropped_size 512 \
+--num_channels 64 \
+--num_res_blocks 3 \
+--diffusion_steps 1000 \
+--noise_schedule linear \
+--timestep_respacing ddim50 \
+--use_ddim

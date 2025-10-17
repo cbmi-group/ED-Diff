@@ -1,0 +1,17 @@
+python batch_inference.py \
+--device 0 \
+--model_path "checkpoints/fmdd_model.pt" \
+--data_dir "datasets/fmdd_nuc/raw" \
+--gt_dir "datasets/fmdd_nuc/gt" \
+--save_dir "results/fmdd_nuc" \
+--ae_iters 25 \
+--ae_lr 0.01 \
+--sigma 5 \
+--omega 0.005 \
+--cropped_size 128 \
+--num_channels 64 \
+--num_res_blocks 3 \
+--diffusion_steps 1000 \
+--noise_schedule linear \
+--timestep_respacing ddim50 \
+--use_ddim
