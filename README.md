@@ -113,6 +113,10 @@ python batch_inference.py \
 --use_ddim
 ```
 
+### Result reproduction
+
+To intuitively display the parameters used in the experiments and facilitate reproduction, we have provided the scripts for execution within the scripts folder. Please refer to the corresponding [guide](scripts/README.md) for usage instructions.
+
 ## Results
 
 ![results](./figs/results.jpg)

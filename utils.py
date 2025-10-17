@@ -27,6 +27,19 @@ def standardized_visualization(x):
     return np.clip(y, 0, vrange).astype(np.uint16)
 
 
+def simpleNormalize(x, mode="hard"):
+    if mode == "hard":
+        p1, p2 = x.min(), x.max()
+    elif mode == "soft":
+        tmp = x.astype(np.float32).flatten()
+        tmp.sort()
+        p1 = tmp[int(len(tmp) * 0.001)]
+        p2 = tmp[int(len(tmp) * 0.999)]
+
+    x = (x - p1) / (p2 - p1 + 1e-8) 
+    return x
+
+
 def consistent_translate(x, y):
     origin_shape = x.shape
 
